@@ -22,5 +22,25 @@ namespace Digitalis__nyomozoiroda2._0
         public string Nev { get => nev; set => nev = value; }
         public int Azonosito { get => azonosito; set => azonosito = value; }
         public string Szerepkor { get => szerepkor; set => szerepkor = value; }
+
+        public string Szerepkorvalasztas()
+        {
+            Console.WriteLine("Kérem válassza ki a szerepkörét: ");
+            Console.WriteLine("1. Nyomozó");
+            Console.WriteLine("2. Vendég");
+            string valasz = Console.ReadLine();
+            switch (valasz)
+            {
+                case "1":
+                    szerepkor = "Nyomozó";
+                    return "Nyomozó";
+                case "2":
+                    return "Vendég";
+                default:
+                    Console.WriteLine("Érvénytelen választás, kérlek próbáld újra.");
+                    return Szerepkorvalasztas();
+            }
+        }
     }
+    
 }
