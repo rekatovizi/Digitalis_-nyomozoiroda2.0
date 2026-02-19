@@ -12,6 +12,14 @@ namespace Digitalis__nyomozoiroda2._0
         string cim;
         string leiras;
         string allapot;
+        List<Szemely> szemelyek;
+        List<Bizonyitek> bizonyitekek;
+
+        public Ugy(List<Szemely> szemelyek, List<Bizonyitek> bizonyitekek)
+        {
+            this.szemelyek = szemelyek;
+            this.bizonyitekek = bizonyitekek;
+        }
 
         public Ugy(int ugyAzonosito, string cim, string leiras, string allapot)
         {
@@ -25,5 +33,7 @@ namespace Digitalis__nyomozoiroda2._0
         public string Cim { get => cim; set => cim = value; }
         public string Leiras { get => leiras; set => leiras = value; }
         public string Allapot { get => allapot; set => allapot = value; }
+        internal List<Szemely> Szemelyek { get => szemelyek; set => szemelyek = value; }
+        internal List<Bizonyitek> Bizonyitekek { get => bizonyitekek; set => bizonyitekek = value; }
     }
 }
