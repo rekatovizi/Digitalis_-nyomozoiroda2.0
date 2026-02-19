@@ -71,15 +71,12 @@ namespace Digitalis__nyomozoiroda2._0
         }
         public void Bizonyiteklistazas(Adattar adattar)
         {
-            Console.WriteLine("Szeretnél bizonyítékokat listázni? ");
-            valasz = Console.ReadLine();
-            if (valasz.ToLower() == "igen")
+            
+            foreach (Bizonyitek b in adattar.Bizonyitekok)
             {
-                foreach (Bizonyitek b in adattar.Bizonyitekok)
-                {
-                    Console.WriteLine($"Azonosító: {b.BizonyitekAzonosito}, Típus: {b.Tipus}, Leírás: {b.Leiras}, Megbízhatósági szint: {b.Megbizhatosagiszint}");
-                }
+                Console.WriteLine($"Azonosító: {b.BizonyitekAzonosito}, Típus: {b.Tipus}, Leírás: {b.Leiras}, Megbízhatósági szint: {b.Megbizhatosagiszint}");
             }
+            
         }
     }
 }

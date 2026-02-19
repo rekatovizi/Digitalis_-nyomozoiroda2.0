@@ -35,7 +35,7 @@ namespace Digitalis__nyomozoiroda2._0
                     break;
                 }
             }
-            Console.WriteLine("Milyen gyanúsítottsági szintet adsz meg? (1-10)");
+            Console.WriteLine("Milyen gyanúsítottsági szintet adsz meg? (1-100)");
             gyanusitotsagiszint = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Milyen státuszt adsz meg? (pl. előzetes letartóztatás, szabadlábon védekezik, stb.)");
             statusz = Console.ReadLine();
