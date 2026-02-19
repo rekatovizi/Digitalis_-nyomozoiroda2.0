@@ -14,7 +14,7 @@
                 switch (valasztas)
                 {
                     case 1:
-                        Console.WriteLine("1 ügy hozzáadása\r\n2 Ügy törlése\r\n3 Ügyek listázása\r\n4 Ügy állapotváltoztatása");
+                        Console.WriteLine("1 ügy hozzáadása\r\n2 Ügy törlése\r\n3 Ügyek listázása\r\n4 Ügy állapotváltoztatása\r\n5 érintett hozzáadása\r\n6 érintett törlése\r\n7 érintett bizonyíték hozzáadása\r\n8 érintett bizonyíték törlése");
                         valasz = Convert.ToInt32(Console.ReadLine());
                         Ugy u = new Ugy(0, "", "", "");
 
@@ -24,6 +24,10 @@
                             case 2: u.Ugytorles(adattar); break;
                             case 3: u.Ugylistazas(adattar); break;
                             case 4: u.Ugyallapotvaltoztatas(adattar); break;
+                            case 5: u.Ugyszemelyhozzaadas(adattar); break;
+                            case 6: u.Ugyszemelytorles(adattar); break;
+                            case 7: u.Ugybizonyitekhozzaadas(adattar); break;
+                            case 8: u.Ugybizonyitektorles(adattar); break;
                             default: Console.WriteLine("Érvénytelen választás."); break;
                         }
                         break;

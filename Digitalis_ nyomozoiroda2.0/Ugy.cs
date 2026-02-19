@@ -12,26 +12,26 @@ namespace Digitalis__nyomozoiroda2._0
         string cim;
         string leiras;
         string allapot;
-        List<Szemely> szemelyek;
-        List<Bizonyitek> bizonyitekok;
+        List<Szemely> ugy_szemelyek;
+        List<Bizonyitek> ugy_bizonyitekok;
 
-        
+
         public Ugy(int ugyAzonosito, string cim, string leiras, string allapot)
         {
             this.ugyAzonosito = ugyAzonosito;
             this.cim = cim;
             this.leiras = leiras;
             this.allapot = allapot;
-            this.szemelyek = szemelyek;
-            this.bizonyitekok = bizonyitekok;
+            this.ugy_szemelyek = ugy_szemelyek;
+            this.ugy_bizonyitekok = ugy_bizonyitekok;
         }
 
         public int UgyAzonosito { get => ugyAzonosito; set => ugyAzonosito = value; }
         public string Cim { get => cim; set => cim = value; }
         public string Leiras { get => leiras; set => leiras = value; }
         public string Allapot { get => allapot; set => allapot = value; }
-        internal List<Szemely> Szemelyek { get => szemelyek; set => szemelyek = value; }
-        internal List<Bizonyitek> Bizonyitekek { get => bizonyitekok; set => bizonyitekok = value; }
+        internal List<Szemely> Szemelyek { get => ugy_szemelyek; set => ugy_szemelyek = value; }
+        internal List<Bizonyitek> Bizonyitekek { get => ugy_bizonyitekok; set => ugy_bizonyitekok = value; }
 
         public void Ugyhozzaadas(Adattar adattar)
         {
@@ -80,7 +80,7 @@ namespace Digitalis__nyomozoiroda2._0
                 Console.WriteLine($"Azonosító: {ugy.UgyAzonosito}, Cím: {ugy.Cim}, Leírás: {ugy.Leiras}, Állapot: {ugy.Allapot}");
             }
         }
-        
+
         public void Ugyallapotvaltoztatas(Adattar adattar)
         {
             Console.WriteLine("Szeretnél ügy állapotát megváltoztatni? ");
@@ -103,6 +103,88 @@ namespace Digitalis__nyomozoiroda2._0
                 }
             }
 
+        }
+        public void Ugyszemelyhozzaadas(Adattar adattar)
+        {
+            Console.WriteLine("Szeretnél személyt hozzáadni az ügyhöz? ");
+            string valasz = Console.ReadLine();
+            if (valasz.ToLower() == "igen")
+            {
+                Console.WriteLine("Kérem adja meg a hozzáadni kívánt személy nevét: ");
+                string nev = Console.ReadLine();
+                Szemely szemely = adattar.Szemelyek.Find(s => s.Nev == nev);
+                if (szemely != null)
+                {
+                    this.ugy_szemelyek.Add(szemely);
+                    Console.WriteLine("Személy sikeresen hozzáadva az ügyhöz.");
+                }
+                else
+                {
+                    Console.WriteLine("Nem található ilyen nevű személy.");
+                }
+            }
+
+        }
+
+        public void Ugyszemelytorles(Adattar adattar)
+        {
+            Console.WriteLine("Szeretnél személyt törölni az ügyből? ");
+            string valasz = Console.ReadLine();
+            if (valasz.ToLower() == "igen")
+            {
+                Console.WriteLine("Kérem adja meg a törölni kívánt személy nevét: ");
+                string nev = Console.ReadLine();
+                Szemely torlendo = adattar.Szemelyek.Find(s => s.Nev == nev);
+                if (torlendo != null)
+                {
+                    this.ugy_szemelyek.Remove(torlendo);
+                    Console.WriteLine("Személy sikeresen törölve az ügyből.");
+                }
+                else
+                {
+                    Console.WriteLine("Nem található ilyen nevű személy.");
+                }
+            }
+        }
+        public void Ugybizonyitekhozzaadas(Adattar adattar)
+        {
+            Console.WriteLine("Szeretnél bizonyítékot hozzáadni az ügyhöz? ");
+            string valasz = Console.ReadLine();
+            if (valasz.ToLower() == "igen")
+            {
+                Console.WriteLine("Kérem adja meg a hozzáadni kívánt bizonyíték azonosítóját: ");
+                int azonosito = Convert.ToInt32(Console.ReadLine());
+                Bizonyitek bizonyitek = adattar.Bizonyitekok.Find(b => b.BizonyitekAzonosito == azonosito);
+                if (bizonyitek != null)
+                {
+                    this.ugy_bizonyitekok.Add(bizonyitek);
+                    Console.WriteLine("Bizonyíték sikeresen hozzáadva az ügyhöz.");
+                }
+                else
+                {
+                    Console.WriteLine("Nem található ilyen azonosítóval rendelkező bizonyíték.");
+                }
+            }
+        }
+        public void Ugybizonyitektorles(Adattar adattar)
+        {
+            Console.WriteLine("Szeretnél bizonyítékot törölni az ügyből? ");
+            string valasz = Console.ReadLine();
+            if (valasz.ToLower() == "igen")
+            {
+                Console.WriteLine("Kérem adja meg a törölni kívánt bizonyíték azonosítóját: ");
+                int azonosito = Convert.ToInt32(Console.ReadLine());
+                Bizonyitek torlendo = adattar.Bizonyitekok.Find(b => b.BizonyitekAzonosito == azonosito);
+                if (torlendo != null)
+                {
+                    this.ugy_bizonyitekok.Remove(torlendo);
+                    Console.WriteLine("Bizonyíték sikeresen törölve az ügyből.");
+                }
+                else
+                {
+                    Console.WriteLine("Nem található ilyen azonosítóval rendelkező bizonyíték.");
+                }
+            }
         }
     }
 }
