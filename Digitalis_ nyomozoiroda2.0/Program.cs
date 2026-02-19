@@ -32,7 +32,16 @@
                         }
                         break;
                     case 2:
-                        Console.WriteLine("Személyek kezelése");
+                        Console.WriteLine("1 szemely hozzáadása\r\n2 személy törlése\r\n3 személyek listázása");
+                        valasz = Convert.ToInt32(Console.ReadLine());
+                        Szemely s = new Szemely("", 0, "");
+                        switch (valasz)
+                        {
+                            case 1: s.Szemelyhozzaadas(adattar); break;
+                            case 2: s.Szemelytorles(adattar); break;
+                            case 3: s.Szemelylistazas(adattar); break;
+                            default: Console.WriteLine("Érvénytelen választás."); break;
+                        }
                         break;
                     case 3:
                         Console.WriteLine("1 bizonyíték hozzáadása\r\n2 bizonyíték törlése \r\n3 bizonyítékok listázása");
