@@ -32,14 +32,22 @@
                         }
                         break;
                     case 2:
-                        Console.WriteLine("1 szemely hozzáadása\r\n2 személy törlése\r\n3 személyek listázása");
+                        Console.WriteLine("1 szemely hozzáadása\r\n2 személy törlése\r\n3 személyek listázása\r\n4 gyanusított hozzáadása\r\n5 gyanusított törlése\r\n6 tanu huzzáadása\r\n7 tanu törlése");
                         valasz = Convert.ToInt32(Console.ReadLine());
                         Szemely s = new Szemely("", 0, "");
+                        Gyanusitott g = new Gyanusitott(s, 0, "");
+                        Tanu t = new Tanu(s, "", DateTime.Now);
                         switch (valasz)
                         {
                             case 1: s.Szemelyhozzaadas(adattar); break;
                             case 2: s.Szemelytorles(adattar); break;
                             case 3: s.Szemelylistazas(adattar); break;
+                            case 4:
+                                s.Szemelylistazas(adattar);
+                                g.Gyanusitotthozzaadas(adattar); break;
+                            case 5: g.Gyanusitottitorles(adattar); break;
+                            case 6: t.Tanufelvetel(adattar); break;
+                            case 7: t.Tanutorles(adattar); break;
                             default: Console.WriteLine("Érvénytelen választás."); break;
                         }
                         break;
