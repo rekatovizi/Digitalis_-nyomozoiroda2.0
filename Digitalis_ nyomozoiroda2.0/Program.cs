@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            Adattar adattar = new Adattar(new List<Ugy>(), new List<Szemely>(), new List<Bizonyitek>(), new List<Felhasznalo>());
             Console.WriteLine("1.Ügyek kezelése\r\n2.Személyek kezelése\r\n3.Bizonyítékok kezelése\r\n4.Idővonal megtekintése\r\n5.Elemzés / döntések\r\n6.Kilépés");
             int valasztas = Convert.ToInt32(Console.ReadLine());
             switch (valasztas)
@@ -15,7 +16,9 @@
                     Console.WriteLine("Személyek kezelése");
                     break;
                 case 3:
-                    Console.WriteLine("Bizonyítékok kezelése");
+                    Console.WriteLine("1 bizonyíték hozzáadása");
+                    Bizonyitek b = new Bizonyitek(0, "", "", 0);
+                    b.Bizonyitekhozzaadas(adattar);
                     break;
                 case 4:
                     Console.WriteLine("Idővonal megtekintése");
