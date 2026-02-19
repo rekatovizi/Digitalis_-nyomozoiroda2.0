@@ -16,6 +16,7 @@ namespace Digitalis__nyomozoiroda2._0
         List<Bizonyitek> ugy_bizonyitekok;
 
 
+
         public Ugy(int ugyAzonosito, string cim, string leiras, string allapot)
         {
             this.ugyAzonosito = ugyAzonosito;

@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Adattar adattar = new Adattar(new List<Ugy>(), new List<Szemely>(), new List<Bizonyitek>(), new List<Felhasznalo>());
+            Adattar adattar = new Adattar(new List<Ugy>(), new List<Szemely>(), new List<Bizonyitek>(), new List<Felhasznalo>(), new List<Idovonal>());
             do
             {
                 int valasztas = 0;
@@ -48,7 +48,17 @@
                         }
                         break;
                     case 4:
-                        Console.WriteLine("Idővonal megtekintése");
+                        Console.WriteLine("1 esemény hozzáadása\r\n 2 esemény törlése\r\n 3 események megtekintése");
+                        valasz = Convert.ToInt32(Console.ReadLine());
+                        Idovonal i = new Idovonal(DateTime.Now, "");
+                        switch (valasz)
+                        {
+                            case 1: i.Idovonalhozzaadas(adattar); break;
+                            case 2: i.Idovonaltorles(adattar); break;
+                            case 3: i.Idovonalmegjelenites(adattar); break;
+                            default: Console.WriteLine("Érvénytelen választás."); break;
+                        }
+
                         break;
                     case 5:
                         Console.WriteLine("Elemzés / döntések");
