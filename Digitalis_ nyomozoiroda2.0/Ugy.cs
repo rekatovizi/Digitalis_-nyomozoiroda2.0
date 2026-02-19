@@ -15,17 +15,15 @@ namespace Digitalis__nyomozoiroda2._0
         List<Szemely> szemelyek;
         List<Bizonyitek> bizonyitekok;
 
-        public Ugy(List<Szemely> szemelyek, List<Bizonyitek> bizonyitekok)
-        {
-            this.szemelyek = szemelyek;
-            this.bizonyitekok = bizonyitekok;
-        }
+        
         public Ugy(int ugyAzonosito, string cim, string leiras, string allapot)
         {
             this.ugyAzonosito = ugyAzonosito;
             this.cim = cim;
             this.leiras = leiras;
             this.allapot = allapot;
+            this.szemelyek = szemelyek;
+            this.bizonyitekok = bizonyitekok;
         }
 
         public int UgyAzonosito { get => ugyAzonosito; set => ugyAzonosito = value; }

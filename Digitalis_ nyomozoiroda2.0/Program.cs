@@ -14,7 +14,18 @@
                 switch (valasztas)
                 {
                     case 1:
-                        Console.WriteLine("1 ügy hozzáadása 2 Ügy törlése 3 Ügyek listázása 4 Ügy állapotváltoztatása");
+                        Console.WriteLine("1 ügy hozzáadása\r\n2 Ügy törlése\r\n3 Ügyek listázása\r\n4 Ügy állapotváltoztatása");
+                        valasz = Convert.ToInt32(Console.ReadLine());
+                        Ugy u = new Ugy(0, "", "", "");
+
+                        switch (valasz)
+                        {
+                            case 1: u.Ugyhozzaadas(adattar); break;
+                            case 2: u.Ugytorles(adattar); break;
+                            case 3: u.Ugylistazas(adattar); break;
+                            case 4: u.Ugyallapotvaltoztatas(adattar); break;
+                            default: Console.WriteLine("Érvénytelen választás."); break;
+                        }
                         break;
                     case 2:
                         Console.WriteLine("Személyek kezelése");
@@ -22,26 +33,14 @@
                     case 3:
                         Console.WriteLine("1 bizonyíték hozzáadása\r\n2 bizonyíték törlése \r\n3 bizonyítékok listázása");
                         valasz = Convert.ToInt32(Console.ReadLine());
+                        Bizonyitek b = new Bizonyitek(0, "", "", 0);
+
                         switch (valasz)
                         {
-                            case 1:
-                                Console.WriteLine("Bizonyíték hozzáadása");
-                                Bizonyitek b = new Bizonyitek(0, "", "", 0);
-                                b.Bizonyitekhozzaadas(adattar);
-                                break;
-                            case 2:
-                                Console.WriteLine("Bizonyíték törlése");
-                                b = new Bizonyitek(0, "", "", 0);
-                                b.Bizonyitektorles(adattar);
-                                break;
-                            case 3:
-                                Console.WriteLine("Bizonyítékok listázása");
-                                b = new Bizonyitek(0, "", "", 0);
-                                b.Bizonyiteklistazas(adattar);
-                                break;
-                            default:
-                                Console.WriteLine("Érvénytelen választás. Kérem, válasszon újra.");
-                                break;
+                            case 1: b.Bizonyitekhozzaadas(adattar); break;
+                            case 2: b.Bizonyitektorles(adattar); break;
+                            case 3: b.Bizonyiteklistazas(adattar); break;
+                            default: Console.WriteLine("Érvénytelen választás."); break;
                         }
                         break;
                     case 4:
