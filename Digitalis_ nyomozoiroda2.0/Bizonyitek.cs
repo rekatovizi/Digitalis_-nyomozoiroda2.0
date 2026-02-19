@@ -12,7 +12,7 @@ namespace Digitalis__nyomozoiroda2._0
         string tipus;
         string leiras;
         int megbizhatosagiszint;
-        string valasz;
+        
 
         public Bizonyitek(int bizonyitekAzonosito, string tipus, string leiras, int megbizhatosagiszint)
         {
@@ -20,15 +20,15 @@ namespace Digitalis__nyomozoiroda2._0
             this.tipus = tipus;
             this.leiras = leiras;
             this.megbizhatosagiszint = megbizhatosagiszint;
-            this.valasz = valasz;
+            
         }
 
         public int BizonyitekAzonosito { get => bizonyitekAzonosito; set => bizonyitekAzonosito = value; }
         public string Tipus { get => tipus; set => tipus = value; }
         public string Leiras { get => leiras; set => leiras = value; }
         public int Megbizhatosagiszint { get => megbizhatosagiszint; set => megbizhatosagiszint = value; }
-        public string Valasz { get => valasz; set => valasz = value; }
 
+        string valasz;
         public void Bizonyitekhozzaadas(Adattar adattar)
         {
             Console.WriteLine("Szeretnél új bizonyítékot hozzáadni? ");
