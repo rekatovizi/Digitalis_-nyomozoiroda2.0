@@ -45,6 +45,7 @@ namespace Digitalis__nyomozoiroda2._0
                 int megbizhatosagiszint = Convert.ToInt32(Console.ReadLine());
                 Bizonyitek ujBizonyitek = new Bizonyitek(azonosito, tipus, leiras, megbizhatosagiszint);
                 adattar.Bizonyitekok.Add(ujBizonyitek);
+                Console.WriteLine("Bizonyíték sikeresen hozzáadva.");
             }
         }
         public void Bizonyitektorles(Adattar adattar)
