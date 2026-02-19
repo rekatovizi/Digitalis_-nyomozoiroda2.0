@@ -59,5 +59,13 @@ namespace Digitalis__nyomozoiroda2._0
                 Console.WriteLine("Nem található ilyen nevű gyanusított.");
             }
         }
+        public void Gyanusitottlistazas(Adattar adattar)
+        {
+             Console.WriteLine("Gyanusítottak listázása:");
+             foreach (Gyanusitott gyanusitott in adattar.Gyanusitottak)
+             {
+                Console.WriteLine($"Név: {gyanusitott.Szemely.Nev}, Gyanúsítottsági szint: {gyanusitott.Gyanusitotsagiszint}, Státusz: {gyanusitott.Statusz}");
+             }
+        }
     }
 }

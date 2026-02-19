@@ -56,5 +56,14 @@ namespace Digitalis__nyomozoiroda2._0
                 Console.WriteLine("Nem található ilyen nevű tanú.");
             }
         }
+
+        public void Tanulistazas(Adattar adattar)
+        {
+            Console.WriteLine("Tanúk listázása:");
+            foreach (Tanu tanu in adattar.Tanuk)
+            {
+                Console.WriteLine($"Név: {tanu.Szemely.Nev}, Vallomás: {tanu.Vallomas}, Vallomás ideje: {tanu.VallomasIdeje}");
+            }
+        }
     }
 }

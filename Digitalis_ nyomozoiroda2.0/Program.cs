@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Adattar adattar = new Adattar(new List<Ugy>(), new List<Szemely>(), new List<Bizonyitek>(), new List<Felhasznalo>(), new List<Idovonal>());
+            Adattar adattar = new Adattar(new List<Ugy>(), new List<Szemely>(), new List<Bizonyitek>(), new List<Felhasznalo>(), new List<Idovonal>(), new List<Tanu>(), new List<Gyanusitott>() );
             do
             {
                 int valasztas = 0;
@@ -32,7 +32,7 @@
                         }
                         break;
                     case 2:
-                        Console.WriteLine("1 szemely hozzáadása\r\n2 személy törlése\r\n3 személyek listázása\r\n4 gyanusított hozzáadása\r\n5 gyanusított törlése\r\n6 tanu huzzáadása\r\n7 tanu törlése");
+                        Console.WriteLine("1 szemely hozzáadása\r\n2 személy törlése\r\n3 személyek listázása\r\n4 gyanusított hozzáadása\r\n5 gyanusított törlése\r\n6 gyanusítottak listázása\r\n7 tanu huzzáadása\r\n8 tanu törlése\r\n9 tanuk listázása");
                         valasz = Convert.ToInt32(Console.ReadLine());
                         Szemely s = new Szemely("", 0, "");
                         Gyanusitott g = new Gyanusitott(s, 0, "");
@@ -46,8 +46,10 @@
                                 s.Szemelylistazas(adattar);
                                 g.Gyanusitotthozzaadas(adattar); break;
                             case 5: g.Gyanusitottitorles(adattar); break;
-                            case 6: t.Tanufelvetel(adattar); break;
-                            case 7: t.Tanutorles(adattar); break;
+                            case 6: g.Gyanusitottlistazas(adattar); break;
+                            case 7: t.Tanufelvetel(adattar); break;
+                            case 8: t.Tanutorles(adattar); break;
+                            case 9: t.Tanulistazas(adattar); break;
                             default: Console.WriteLine("Érvénytelen választás."); break;
                         }
                         break;
